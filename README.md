@@ -20,6 +20,7 @@ This repository documents the Pi setup currently used on this machine.
 | [`runtime-secrets`](/extensions/runtime-secrets.ts) | Core | Adds in-memory runtime secret management via `/secret` commands, injects secrets into bash tool env vars, and redacts secret values from tool output. |
 | [`session-breakdown`](https://github.com/mitsuhiko/agent-stuff) | Core | Adds `/session-breakdown` interactive analytics for sessions/messages/tokens/cost over 7/30/90 day ranges. |
 | [`todos`](https://github.com/mitsuhiko/agent-stuff) | Trial | Adds file-backed todo management (`.pi/todos`) with commands, tool integration, locking, and interactive TUI. |
+| [`todos-gather`](/extensions/todos-gather.ts) | Trial | Adds `/todos-gather` as a companion extension that imports todos from sibling git worktrees without forking the main todos extension. |
 | [`btw`](https://github.com/noahsaso/my-pi) | Trial | Adds asynchronous side-thread commands (`/btw`, `/btw:new`, `/btw:inject`, `/btw:summarize`) with a live widget. |
 | [`plannotator`](https://github.com/jc/plannotator) | Trial | Fork for code review with checkpoints and file revision range review. Very similar to Reviewable. |
 | [`autoresearch-create`](https://github.com/davebcn87/pi-autoresearch) | Candidate | Runs autonomous optimization loops using `init_experiment`, `run_experiment`, and `log_experiment`. |
