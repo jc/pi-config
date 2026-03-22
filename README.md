@@ -21,6 +21,9 @@ This repository documents the Pi setup currently used on this machine.
 | [`session-breakdown`](https://github.com/mitsuhiko/agent-stuff) | Core | Adds `/session-breakdown` interactive analytics for sessions/messages/tokens/cost over 7/30/90 day ranges. |
 | [`todos`](https://github.com/mitsuhiko/agent-stuff) | Trial | Adds file-backed todo management (`.pi/todos`) with commands, tool integration, locking, and interactive TUI. |
 | [`todos-gather`](/extensions/todos-gather.ts) | Trial | Adds `/todos-gather` as a companion extension that imports todos from sibling git worktrees without forking the main todos extension. |
+| [`pi-remote`](https://github.com/jc/pi-remote) | Trial | Fork of pi-remote with mobile-first remote Pi access, Tailscale integration, and discovery for active sessions. |
+| [`pi-tau`](https://github.com/jc/tau) | Trial | Fork of Tau for browser mirroring of live Pi sessions and history, with a live-only filter and quieter mirror logging. |
+| [`pi-diff-review`](https://github.com/jc/pi-diff-review) | Trial | Fork of pi-diff-review for native diff review with per-file checkpoints and checkpoint-based diff ranges. |
 | [`btw`](https://github.com/noahsaso/my-pi) | Trial | Adds asynchronous side-thread commands (`/btw`, `/btw:new`, `/btw:inject`, `/btw:summarize`) with a live widget. |
 | [`plannotator`](https://github.com/jc/plannotator) | Trial | Fork for code review with checkpoints and file revision range review. Very similar to Reviewable. |
 | [`autoresearch-create`](https://github.com/davebcn87/pi-autoresearch) | Candidate | Runs autonomous optimization loops using `init_experiment`, `run_experiment`, and `log_experiment`. |
