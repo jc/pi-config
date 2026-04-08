@@ -1,5 +1,5 @@
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
-import { createBashTool } from "@mariozechner/pi-coding-agent";
+import { createBashTool, isToolCallEventType } from "@mariozechner/pi-coding-agent";
 
 const SECRET_NAME_RE = /^[A-Za-z_][A-Za-z0-9_]*$/;
 const MIN_REDACTION_LENGTH = 4;
@@ -61,7 +61,7 @@ export default function runtimeSecrets(pi: ExtensionAPI) {
 	});
 
 	pi.on("tool_call", async (event, ctx) => {
-		if (event.toolName !== "bash" || secrets.size === 0) return undefined;
+		if (!isToolCallEventType("bash", event) || secrets.size === 0) return undefined;
 
 		const command = event.input.command;
 		const leakRisk =
