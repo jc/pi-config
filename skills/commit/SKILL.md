@@ -23,10 +23,13 @@ Examples from James's commits:
 ## Notes
 
 - Body is OPTIONAL. If needed, add a blank line after the subject and write short paragraphs or bullet lists to capture details. Hard-wrap body lines at 72 characters.
+- The body should describe the details or motivation for the change; not the journey of the change.
 - Never place `\n` escape sequences inside `-m` strings. Git will keep them as literal backslash+n text.
 - For multi-paragraph bodies, use multiple `-m` flags (one paragraph per `-m`). Git inserts blank lines between them automatically.
 - If the current branch name starts with digits (e.g., `2342-new-feature`), the body MUST end with `See #2342`. If there is no other body content, include just that line after the blank line.
 - Do NOT add sign-offs (no `Signed-off-by`) or `Co-authored-by` lines unless explicitly asked.
+- This prohibition is absolute by default: never add attribution trailers, agent credit, or similar metadata unless the user explicitly requests it.
+- Before committing, inspect the exact message text you plan to pass to Git and verify it contains no `Co-authored-by:` or `Signed-off-by:` text.
 - Only commit; do NOT push.
 - If it is unclear whether a file should be included, ask the user which files to commit.
 - Treat any caller-provided arguments as additional commit guidance. Common patterns:
@@ -41,6 +44,8 @@ Examples from James's commits:
 3. Check the current branch name with `git rev-parse --abbrev-ref HEAD`. If it starts with digits, plan to add `See #<digits>` as the final body line; otherwise skip the issue line.
 4. If there are ambiguous extra files, ask the user for clarification before committing.
 5. Stage only the intended files (all changes if no files specified).
-6. Run `git commit -m "<subject>"`.
+6. Verify the final subject/body contains no forbidden trailers or attribution text (especially `Co-authored-by:` and `Signed-off-by:`) unless explicitly requested by the user.
+7. Run `git commit -m "<subject>"`.
    - If a body is needed, add one `-m` per paragraph in order (final paragraph must be `See #<digits>` when required).
    - Use real line breaks for wrapped lines; never use `\n` escapes in message text.
+   - If Git or a hook rejects the message, fix the message and retry. Do not bypass hooks with `--no-verify` unless the user explicitly asks.
